@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 import TerminalLabel from '../../components/TerminalLabel'
+
+const HCAPTCHA_SITEKEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
 
 export default function ContactForm() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [captchaToken, setCaptchaToken] = useState(null)
+  const captchaRef = useRef(null)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -11,6 +16,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!captchaToken) return
     setStatus('sending')
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -18,17 +24,24 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          'h-captcha-response': captchaToken,
           ...form,
         }),
       })
       if (res.ok) {
         setStatus('sent')
         setForm({ name: '', email: '', message: '' })
+        setCaptchaToken(null)
+        captchaRef.current?.resetCaptcha()
       } else {
         setStatus('error')
+        captchaRef.current?.resetCaptcha()
+        setCaptchaToken(null)
       }
     } catch {
       setStatus('error')
+      captchaRef.current?.resetCaptcha()
+      setCaptchaToken(null)
     }
   }
 
@@ -95,6 +108,15 @@ export default function ContactForm() {
             className={inputClass + ' resize-none'}
           />
 
+          <HCaptcha
+            ref={captchaRef}
+            sitekey={HCAPTCHA_SITEKEY}
+            onVerify={setCaptchaToken}
+            onExpire={() => setCaptchaToken(null)}
+            theme="dark"
+            reCaptchaCompat={false}
+          />
+
           {status === 'sent' && (
             <TerminalLabel className="!text-green-400 !border-green-400/40 self-start">
               MESSAGE_SENT
@@ -108,7 +130,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            disabled={status === 'sending' || status === 'sent'}
+            disabled={status === 'sending' || status === 'sent' || !captchaToken}
             className="font-mono font-bold text-sm uppercase tracking-widest bg-amber text-bg-base px-8 py-4 transition-all duration-200 hover:shadow-[0_0_15px_#ffb000] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === 'sending' ? 'TRANSMITTING...' : 'INITIALIZE PROTOCOL'}
