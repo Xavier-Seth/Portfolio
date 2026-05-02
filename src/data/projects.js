@@ -113,7 +113,7 @@ export const projects = [
       '7-day bar chart with tap-to-inspect tooltips (fl_chart)',
       'Bilingual UI: English ↔ Filipino, switchable in Settings without app restart',
     ],
-    github: 'https://github.com/Xavier-Seth/chicken-sales-pos',
+    github: 'https://github.com/Xavier-Seth/Fried_Chicken_Sales.git',
     isPrivate: false,
     placeholderColor: '#212b33',
   },
