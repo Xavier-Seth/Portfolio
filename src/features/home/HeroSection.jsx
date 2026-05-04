@@ -47,7 +47,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="font-body text-xl text-text-muted mb-8 max-w-2xl">
-          Full-stack developer & system architect specializing in enterprise document systems, ML pipelines, and mobile apps. Based in the Philippines, building tools that actually ship.
+          Web developer from the Philippines, eager to learn, build, and grow with every project.
         </p>
 
         <div className="flex flex-wrap gap-2 mb-10">
