@@ -47,7 +47,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="font-body text-xl text-text-muted mb-8 max-w-2xl">
-          Web and Software Developer from the Philippines, eager to learn, build, and grow with every project.
+          Aspiring Web and Software Developer from the Philippines, eager to learn, build, and grow with every project.
         </p>
 
         <div className="flex flex-wrap gap-2 mb-10">
