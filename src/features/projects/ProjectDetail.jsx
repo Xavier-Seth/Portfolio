@@ -41,7 +41,7 @@ export default function ProjectDetail() {
             { key: 'FRAMEWORK', val: project.stack[0] },
             { key: 'TYPE', val: project.type },
             { key: 'YEAR', val: project.year },
-            { key: 'STATUS', val: 'PUBLIC' },
+            { key: 'STATUS', val: project.isPrivate ? 'PRIVATE' : 'PUBLIC' },
           ].map(({ key, val }) => (
             <div key={key}>
               <span className="font-mono text-[10px] text-slate-600 uppercase tracking-widest block mb-1">
@@ -90,16 +90,36 @@ export default function ProjectDetail() {
           </ul>
         </div>
 
-        {/* GitHub */}
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-mono font-bold text-sm uppercase tracking-widest border border-amber text-amber px-6 py-3 hover:bg-amber hover:text-bg-base transition-all duration-200 hover:shadow-[0_0_15px_#ffb000]"
-        >
-          <span className="material-symbols-outlined text-sm">open_in_new</span>
-          VIEW SOURCE →
-        </a>
+        {/* Links */}
+        <div className="flex flex-wrap items-center gap-4">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono font-bold text-sm uppercase tracking-widest bg-amber text-bg-base px-6 py-3 transition-all duration-200 hover:shadow-[0_0_15px_#ffb000]"
+            >
+              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              LIVE SITE →
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono font-bold text-sm uppercase tracking-widest border border-amber text-amber px-6 py-3 hover:bg-amber hover:text-bg-base transition-all duration-200 hover:shadow-[0_0_15px_#ffb000]"
+            >
+              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              VIEW SOURCE →
+            </a>
+          )}
+        </div>
+        {project.isPrivate && project.privateNote && (
+          <p className="mt-6 font-mono text-xs text-slate-500 tracking-wide leading-relaxed max-w-xl">
+            // {project.privateNote}
+          </p>
+        )}
       </div>
     </main>
   )

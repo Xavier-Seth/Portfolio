@@ -63,16 +63,32 @@ export default function ProjectCard({ project, featured = false }) {
             >
               CASE STUDY →
             </Link>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
-              aria-label="GitHub"
-            >
-              <span className="material-symbols-outlined text-sm">code</span>
-              GITHUB
-            </a>
+            <div className="ml-auto flex items-center gap-2">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
+                  aria-label="Live site"
+                >
+                  <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  LIVE SITE
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
+                  aria-label="GitHub"
+                >
+                  <span className="material-symbols-outlined text-sm">code</span>
+                  GITHUB
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
