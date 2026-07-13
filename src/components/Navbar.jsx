@@ -36,12 +36,6 @@ export default function Navbar() {
             {label}
           </NavLink>
         ))}
-        <a
-          href="#"
-          className="font-mono text-xs uppercase tracking-widest border border-amber text-amber px-4 py-2 transition-all duration-200 hover:bg-amber hover:text-bg-base"
-        >
-          DOWNLOAD CV
-        </a>
       </div>
 
       {/* Mobile hamburger */}
@@ -71,9 +65,6 @@ export default function Navbar() {
               {label}
             </NavLink>
           ))}
-          <a href="#" className="font-mono text-xs uppercase tracking-widest border border-amber text-amber px-4 py-2 text-center">
-            DOWNLOAD CV
-          </a>
         </div>
       )}
     </nav>

@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="md:col-span-8">
           <TerminalLabel className="mb-6">SYSTEM_FUNCTION_DATA</TerminalLabel>
           <h2 className="font-display text-headline-md text-text-base uppercase font-bold mb-6">
-            ENGINEERING DIGITAL RESILIENCE
+            BUILDING REAL SYSTEMS
           </h2>
           <div className="flex flex-col gap-4 font-body text-base text-text-muted leading-relaxed">
             <p>
@@ -31,16 +31,10 @@ export default function AboutSection() {
           </div>
           <div className="mt-8 flex gap-4">
             <a
-              href="#"
-              className="font-mono font-bold text-sm uppercase tracking-widest border border-amber text-amber px-6 py-3 transition-all duration-200 hover:bg-amber hover:text-bg-base hover:shadow-[0_0_15px_#ffb000]"
-            >
-              DOWNLOAD CV
-            </a>
-            <a
               href="https://github.com/Xavier-Seth"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-sm uppercase tracking-widest border border-slate-700 text-slate-400 px-6 py-3 transition-all hover:border-amber hover:text-amber"
+              className="font-mono font-bold text-sm uppercase tracking-widest border border-amber text-amber px-6 py-3 transition-all duration-200 hover:bg-amber hover:text-bg-base hover:shadow-[0_0_15px_#ffb000]"
             >
               GITHUB →
             </a>

@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex flex-col gap-2">
           <span className="font-mono text-[10px] tracking-widest text-amber uppercase">XAVIER-SETH.DEV</span>
-          <span className="font-mono text-[10px] text-slate-600">© 2025 Xavier-Seth C. Noynay</span>
+          <span className="font-mono text-[10px] text-slate-600">© 2026 Xavier-Seth C. Noynay</span>
         </div>
 
         <div className="flex items-center gap-3">

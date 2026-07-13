@@ -5,7 +5,7 @@ import CursorBlink from '../../components/CursorBlink'
 import TerminalLabel from '../../components/TerminalLabel'
 import TechBadge from '../../components/TechBadge'
 
-const HERO_TEXT = 'CRAFTING DIGITAL INFRASTRUCTURE FROM THE PHILIPPINES'
+const HERO_TEXT = 'FULL-STACK WEB DEVELOPER — PHILIPPINES'
 const ACCENT_WORD = 'PHILIPPINES'
 
 const STACK_CHIPS = ['PHP', 'Vue.js', 'Flutter', 'Python']
@@ -47,7 +47,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="font-body text-xl text-text-muted mb-8 max-w-2xl">
-          Aspiring Web and Software Developer from the Philippines, eager to learn, build, and grow with every project.
+          I build document management systems, desktop tools, and web apps with Laravel, Vue.js, and MySQL.
         </p>
 
         <div className="flex flex-wrap gap-2 mb-10">
@@ -63,12 +63,6 @@ export default function HeroSection() {
           >
             VIEW PROJECTS →
           </Link>
-          <a
-            href="#"
-            className="font-mono text-sm uppercase tracking-widest border border-slate-700 text-text-muted px-8 py-4 transition-all duration-200 hover:border-amber hover:text-amber"
-          >
-            DOWNLOAD CV
-          </a>
         </div>
       </div>
     </section>
