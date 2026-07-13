@@ -6,14 +6,28 @@ import TechBadge from '../../components/TechBadge'
 import ScrollFadeIn from '../../components/ScrollFadeIn'
 
 export default function ProjectCard({ project, featured = false }) {
+  const preview = project.screenshots?.[0]
+
   return (
     <ScrollFadeIn>
       <div className="group bg-bg-surface border border-slate-800 hover:border-amber transition-colors duration-300 h-full flex flex-col">
         <div className={`overflow-hidden border-b border-slate-800 ${featured ? 'h-80' : 'h-64'}`}>
-          <PlaceholderBlock
-            color={project.placeholderColor}
-            className="w-full h-full group-hover:scale-110 transition-transform duration-700"
-          />
+          {preview ? (
+            <img
+              src={preview.src}
+              alt={`${project.title} interface preview`}
+              width={1365}
+              height={600}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+            />
+          ) : (
+            <PlaceholderBlock
+              color={project.placeholderColor}
+              className="w-full h-full group-hover:scale-110 transition-transform duration-700"
+            />
+          )}
         </div>
 
         <div className="p-6 flex flex-col flex-1 gap-4">
