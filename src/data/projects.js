@@ -15,6 +15,30 @@ export const projects = [
       'Pessimistic DB locking on status transitions (race condition guard)',
       'Full audit log + role-based access control (Admin, Staff, Teacher)',
     ],
+    screenshots: [
+      {
+        src: '/screens/qms-iso-system/create-dcr-form.webp',
+        path: '~/qms/documents/create',
+        caption:
+          "Create DCR form — the institution's real Document Change Request form, rendered in-browser. Saves as draft or publishes into the approval workflow, and exports to Word via PHPWord. Extra fields are configurable per record type in System Settings rather than hardcoded.",
+      },
+      {
+        src: '/screens/qms-iso-system/document-workflow.webp',
+        path: '~/qms/documents',
+        caption:
+          'Document approval workflow — Draft → Pending → Approved/Rejected, with pessimistic DB locking on status transitions to guard against race conditions.',
+      },
+      {
+        src: '/screens/qms-iso-system/logs.webp',
+        path: '~/qms/logs',
+        caption: 'Full audit log — every status change recorded with actor and timestamp.',
+      },
+      {
+        src: '/screens/qms-iso-system/dashboard.webp',
+        path: '~/qms/dashboard',
+        caption: 'Dashboard — pending approvals and recent activity across OFI, DCR, and CAR records.',
+      },
+    ],
     github: 'https://github.com/Xavier-Seth/QMS-ISO-_System',
     isPrivate: false,
     placeholderColor: '#ffb000',
@@ -78,6 +102,30 @@ export const projects = [
       'Duplicate detection via file hash with user-prompted override modal',
       'Dual backup: encrypted archive for restore + decrypted archive for human export',
       'LibreOffice headless Office → PDF conversion (on-premises, no cloud APIs)',
+    ],
+    screenshots: [
+      {
+        src: '/screens/docunet/upload-classification.webp',
+        path: '~/docunet/upload',
+        caption:
+          'Upload with auto-classification — Tesseract extracts the text, a Flask microservice returns the document type and a confidence score.',
+      },
+      {
+        src: '/screens/docunet/dashboard.webp',
+        path: '~/docunet/dashboard',
+        caption: 'Dashboard — document counts, recent uploads, and classification status.',
+      },
+      {
+        src: '/screens/docunet/teachers.webp',
+        path: '~/docunet/teachers',
+        caption:
+          'Teacher records — every document AES-encrypted at rest, decrypted on the fly for preview and download only.',
+      },
+      {
+        src: '/screens/docunet/settings.webp',
+        path: '~/docunet/settings',
+        caption: 'System settings — backup scheduling and role assignment.',
+      },
     ],
     github: 'https://github.com/Xavier-Seth/DocuNet',
     isPrivate: false,

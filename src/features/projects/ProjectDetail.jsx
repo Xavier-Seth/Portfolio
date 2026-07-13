@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import PlaceholderBlock from '../../components/PlaceholderBlock'
 import TerminalLabel from '../../components/TerminalLabel'
 import TechBadge from '../../components/TechBadge'
+import TerminalFrame from '../../components/TerminalFrame'
+import ScrollFadeIn from '../../components/ScrollFadeIn'
 import { projects } from '../../data/projects'
 
 export default function ProjectDetail() {
@@ -89,6 +91,20 @@ export default function ProjectDetail() {
             ))}
           </ul>
         </div>
+
+        {/* Screens */}
+        {project.screenshots?.length > 0 && (
+          <div className="mb-10">
+            <TerminalLabel className="mb-4">SCREENS</TerminalLabel>
+            <div className="flex flex-col gap-12 mt-4">
+              {project.screenshots.map((shot, i) => (
+                <ScrollFadeIn key={shot.src} delay={i * 80} durationMs={450} threshold={0.15} className="ease-out">
+                  <TerminalFrame {...shot} />
+                </ScrollFadeIn>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Links */}
         <div className="flex flex-wrap items-center gap-4">

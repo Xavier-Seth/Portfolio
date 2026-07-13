@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function ScrollFadeIn({ children, delay = 0, className = '' }) {
+export default function ScrollFadeIn({ children, delay = 0, durationMs = 700, threshold = 0.1, className = '' }) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
@@ -14,17 +14,17 @@ export default function ScrollFadeIn({ children, delay = 0, className = '' }) {
           observer.disconnect()
         }
       },
-      { threshold: 0.1 }
+      { threshold }
     )
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [threshold])
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all motion-reduce:transition-none ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'} ${className}`}
+      style={{ transitionDelay: `${delay}ms`, transitionDuration: `${durationMs}ms` }}
     >
       {children}
     </div>
