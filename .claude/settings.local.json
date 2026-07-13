@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:stitch.withanthropics.com)",
-      "WebFetch(domain:stitch.claude.ai)"
-    ]
-  }
-}
