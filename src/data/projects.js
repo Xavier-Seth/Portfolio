@@ -122,9 +122,9 @@ export const projects = [
           'Teacher records — every document AES-encrypted at rest, decrypted on the fly for preview and download only.',
       },
       {
-        src: '/screens/docunet/settings.webp',
-        path: '~/docunet/settings',
-        caption: 'System settings — backup scheduling and role assignment.',
+        src: '/screens/docunet/backup.webp',
+        path: '~/docunet/backup',
+        caption: 'Dual backup — an encrypted archive for restore, plus a decrypted archive for human export.',
       },
     ],
     github: 'https://github.com/Xavier-Seth/DocuNet',
