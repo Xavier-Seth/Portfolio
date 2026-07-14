@@ -96,7 +96,13 @@ export default function ProjectDetail() {
         {project.screenshots?.length > 0 && (
           <div className="mb-10">
             <TerminalLabel className="mb-4">SCREENS</TerminalLabel>
-            <div className="flex flex-col gap-12 mt-4">
+            <div
+              className={
+                project.screenshots.every((s) => s.orientation === 'portrait')
+                  ? 'grid grid-cols-2 md:grid-cols-4 gap-4 mt-4'
+                  : 'flex flex-col gap-12 mt-4'
+              }
+            >
               {project.screenshots.map((shot, i) => (
                 <ScrollFadeIn key={shot.src} delay={i * 80} durationMs={450} threshold={0.15} className="ease-out">
                   <TerminalFrame {...shot} />

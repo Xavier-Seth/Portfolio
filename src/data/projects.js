@@ -167,6 +167,35 @@ export const projects = [
       '7-day bar chart with tap-to-inspect tooltips (fl_chart)',
       'Bilingual UI: English ↔ Filipino, switchable in Settings without app restart',
     ],
+    screenshots: [
+      {
+        src: '/screens/chicken-sales-pos/daily-sales.webp',
+        orientation: 'portrait',
+        path: '~/pos/sales',
+        caption:
+          'Daily Sales — stock movement in, cash counted out. Sold units and revenue calculate live from beginning stock, deliveries, and remaining count.',
+      },
+      {
+        src: '/screens/chicken-sales-pos/history.webp',
+        orientation: 'portrait',
+        path: '~/pos/history',
+        caption:
+          'Sales History — end-of-day cash reconciliation labels the result Match, Short, or Over against expected cash.',
+      },
+      {
+        src: '/screens/chicken-sales-pos/charts.webp',
+        orientation: 'portrait',
+        path: '~/pos/charts',
+        caption: '7-day net sales chart with tap-to-inspect tooltips (fl_chart).',
+      },
+      {
+        src: '/screens/chicken-sales-pos/settings.webp',
+        orientation: 'portrait',
+        path: '~/pos/settings',
+        caption:
+          'Settings — English/Filipino toggle switches the whole UI without an app restart. Product prices are configurable and feed Sales, History, and Charts.',
+      },
+    ],
     github: 'https://github.com/Xavier-Seth/Fried_Chicken_Sales.git',
     isPrivate: false,
     placeholderColor: '#212b33',
