@@ -3,8 +3,12 @@ import TerminalLabel from '../../components/TerminalLabel'
 import ProjectCard from '../projects/ProjectCard'
 import { projects } from '../../data/projects'
 
+const FEATURED_SLUGS = ['qms-iso-system', 'docunet', 'juls-fried-chicken']
+
 export default function SelectedWork() {
-  const [featured, ...side] = projects.slice(0, 3)
+  const [featured, ...side] = FEATURED_SLUGS.map((slug) =>
+    projects.find((p) => p.slug === slug)
+  ).filter(Boolean)
 
   return (
     <section className="py-16 px-6 md:px-0">
