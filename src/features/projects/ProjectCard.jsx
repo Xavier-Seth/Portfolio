@@ -10,7 +10,7 @@ export default function ProjectCard({ project, featured = false }) {
 
   return (
     <ScrollFadeIn>
-      <div className="group bg-bg-surface border border-slate-800 hover:border-amber transition-colors duration-300 h-full flex flex-col">
+      <div className="group relative cursor-pointer bg-bg-surface border border-slate-800 hover:border-amber transition-colors duration-300 h-full flex flex-col">
         <div className={`overflow-hidden border-b border-slate-800 ${featured ? 'h-80' : 'h-64'}`}>
           {preview ? (
             <img
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, featured = false }) {
           <div className="flex items-center gap-4 pt-2 border-t border-slate-800">
             <Link
               to={`/projects/${project.slug}`}
-              className="font-mono text-xs text-amber uppercase tracking-widest hover:text-glow-amber transition-all"
+              className="font-mono text-xs text-amber uppercase tracking-widest hover:text-glow-amber transition-all after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:-outline-offset-2 focus-visible:after:outline-amber"
             >
               CASE STUDY →
             </Link>
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, featured = false }) {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
+                  className="relative z-10 flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
                   aria-label="Live site"
                 >
                   <span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -95,7 +95,7 @@ export default function ProjectCard({ project, featured = false }) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
+                  className="relative z-10 flex items-center gap-1 font-mono text-[10px] text-slate-500 uppercase tracking-widest border border-slate-700 px-2 py-1 hover:border-amber hover:text-amber transition-colors"
                   aria-label="GitHub"
                 >
                   <span className="material-symbols-outlined text-sm">code</span>
